@@ -2,7 +2,11 @@
 
 
 
-![Snipaste_2018-01-05_10-19-54](Snipaste_2018-01-05_10-19-54.jpg)
+
+
+![img](https://images2015.cnblogs.com/blog/690292/201609/690292-20160923095944481-1758567758.png)
+
+
 
 （1）对于public修饰符，它具有最大的访问权限，可以访问任何一个在CLASSPATH下的类、接口、异常等。它往往用于对外的情况，也就是对象或类对外的一种接口的形式。
 
@@ -32,7 +36,7 @@
 
 [重写和重载](https://www.cnblogs.com/bluestorm/archive/2012/03/01/2376236.html)
 
-##### 重写（overloading）：
+##### 重载（overloading）：
 
 （1） 方法重载是让类以统一的方式处理不同类型数据的一种手段。多个同名函数同时存在，具有不同的参数个数/类型。
 
@@ -167,6 +171,301 @@ https://www.cnblogs.com/chenssy/p/3372798.html
 
 
 所谓多态就是指程序中定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时并不确定，而是在程序运行期间才确定，即一个引用变量倒底会指向哪个类的实例对象，该引用变量发出的方法调用到底是哪个类中实现的方法，必须在由程序运行期间才能决定。因为在程序运行时才确定具体的类，这样，不用修改源程序代码，就可以让引用变量绑定到各种不同的类实现上，从而导致该引用调用的具体方法随之改变，即不修改程序代码就可以改变程序运行时所绑定的具体代码，让程序可以选择多个运行状态，这就是多态性。
+
+
+
+##### 多态自己写的代码示例
+
+```java
+public abstract class Animal {
+	//抽象类可以有也可以没有抽象方法
+	public String name;
+	public Animal(String name) {
+		this.name= name;
+	}
+	//获得name
+	public String getName() {
+		return name;
+	}
+	// 发出叫声
+	public abstract void bark();
+	
+	//吃食物
+	public abstract void eat(Food food);
+}
+
+public class Cat extends Animal {
+	// 构造方法
+	public Cat() {
+		super("cat");
+	}
+
+	// 重写bark方法
+	public void bark() {
+		System.out.println("猫叫：喵喵喵！！");
+	}
+
+	public void eat(Food food) {
+		if(food instanceof Fish){
+		System.out.println(super.getName()+"吃"+ food.getName() +"!");
+		}
+		else {
+			System.out.println(super.getName()+"不吃"+food.getName() +"!");
+		}
+	}
+
+}
+
+public class Dog extends Animal{
+
+	// 构造方法
+		public Dog() {
+			super("dog");
+		}
+
+		// 重写bark方法
+		public void bark() {
+			System.out.println("狗叫:汪汪汪！！");
+		}
+
+		public void eat(Food food) {
+			if(food instanceof Bone){
+			System.out.println(super.getName()+"吃"+ food.getName() +"!");
+			}
+			else {
+				System.out.println(super.getName()+"不吃"+food.getName() +"!");
+			}
+		}
+
+}
+
+public class Food {
+	public String name;
+	public Food(String name) {
+		this.name=name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+}
+
+public class Fish extends Food {
+	public Fish() {
+		super("fish");
+	}
+}
+
+public class Bone extends Food {
+	public Bone() {
+		super("bone");
+	}
+}
+
+public class Hostman {
+
+	//喂食
+	public void food(Animal animal,Food food) {
+		animal.eat(food);
+	}
+	
+}
+
+public class Test {
+
+	public static void main(String[] args) {
+		Animal cat = new Cat();
+		Animal dog = new Dog();
+		cat.bark();
+		dog.bark();
+		Hostman man=new Hostman();
+		Fish fish=new Fish();
+		Bone bone=new Bone();
+		man.food(cat, fish);
+		man.food(dog,bone);
+		man.food(cat, bone);
+		man.food(dog,fish);	
+	}
+
+}
+```
+
+##### 接口（来源于[菜鸟教程](http://www.runoob.com/java/java-interfaces.html)）
+
+接口（英文：Interface），在JAVA编程语言中是一个抽象类型，是抽象方法的集合，接口通常以interface来声明。一个类通过继承接口的方式，从而来继承接口的抽象方法。
+
+接口并不是类，编写接口的方式和类很相似，但是它们属于不同的概念。**类描述对象的属性和方法。接口则包含类要实现的方法。**
+
+**除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。**
+
+接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。另外，*在 Java 中，接口类型可用来声明一个变量，他们可以成为一个空指针，或是被绑定在一个以此接口实现的对象。*
+
+
+
+##### 接口与类相似点：
+
+- 一个接口可以有多个方法。
+- 接口文件保存在 .java 结尾的文件中，文件名使用接口名。
+- 接口的字节码文件保存在 .class 结尾的文件中。
+- 接口相应的字节码文件必须在与包名称相匹配的目录结构中。
+
+
+
+##### 接口与类的区别：
+
+- 接口不能用于实例化对象。
+- 接口没有构造方法。
+- 接口中所有的方法必须是抽象方法。
+- 接口不能包含成员变量，除了 static 和 final 变量。
+- 接口不是被类继承了，而是要被类实现。
+- 接口支持多继承。
+
+```java
+//接口的声明
+interface Animal {
+   public void eat();
+   public void travel();
+}
+
+//接口的实现
+public class MammalInt implements Animal{
+ 
+   public void eat(){
+      System.out.println("Mammal eats");
+   }
+ 
+   public void travel(){
+      System.out.println("Mammal travels");
+   } 
+ 
+   public int noOfLegs(){
+      return 0;
+   }
+ 
+   public static void main(String args[]){
+      MammalInt m = new MammalInt();
+      m.eat();
+      m.travel();
+   }
+}
+```
+
+##### 接口的继承
+
+一个接口能继承另一个接口，和类之间的继承方式比较相似。接口的继承使用extends关键字，子接口继承父接口的方法。
+
+下面的Sports接口被Hockey和Football接口继承：
+
+```java
+// 文件名: Sports.java
+public interface Sports
+{
+   public void setHomeTeam(String name);
+   public void setVisitingTeam(String name);
+}
+ 
+// 文件名: Football.java
+public interface Football extends Sports
+{
+   public void homeTeamScored(int points);
+   public void visitingTeamScored(int points);
+   public void endOfQuarter(int quarter);
+}
+ 
+// 文件名: Hockey.java
+public interface Hockey extends Sports
+{
+   public void homeGoalScored();
+   public void visitingGoalScored();
+   public void endOfPeriod(int period);
+   public void overtimePeriod(int ot);
+}
+```
+
+Hockey接口自己声明了四个方法，从Sports接口继承了两个方法，这样，实现Hockey接口的类需要实现六个方法。
+
+相似的，实现Football接口的类需要实现五个方法，其中两个来自于Sports接口。
+
+```java
+//接口允许多继承
+public interface Hockey extends Sports, Event
+```
+
+##### 标记接口
+
+没有任何方法的接口被称为标记接口。标记接口主要用于以下两种目的：
+
+- **建立一个公共的父接口：**正如EventListener接口，这是由几十个其他接口扩展的Java API，你可以使用一个标记接口来建立一组接口的父接口。例如：当一个接口继承了EventListener接口，Java虚拟机(JVM)就知道该接口将要被用于一个事件的代理方案。
+- **向一个类添加数据类型：**这种情况是标记接口最初的目的，实现标记接口的类不需要定义任何接口方法(因为标记接口根本就没有方法)，但是该类通过多态性变成一个接口类型。
+
+
+
+##### 接口中的成员变量
+
+​	只能是final类型和static类型，默认是static类型。
+
+##### 访问修饰符以外的其他修饰符
+
+**final 变量：**
+
+final 变量能被显式地初始化并且只能初始化一次。被声明为 final 的对象的引用不能指向不同的对象。但是 final 对象里的数据可以被改变。也就是说 final 对象的引用不能改变，但是里面的值可以改变。
+
+final 修饰符通常和 static 修饰符一起使用来创建类常量。
+
+```java
+public class Test{
+  final int value = 10;
+  // 下面是声明常量的实例
+  public static final int BOXWIDTH = 6;
+  static final String TITLE = "Manager";
+ 
+  public void changeValue(){
+     value = 12; //将输出一个错误
+  }
+}
+```
+
+**final 方法：**
+
+类中的 final 方法可以被子类继承，但是不能被子类修改。
+
+声明 final 方法的主要目的是防止该方法的内容被修改。
+
+如下所示，使用 final 修饰符声明方法。
+
+```java
+public class Test{
+    public final void changeName(){
+       // 方法体
+    }
+}
+```
+
+**final 类:**
+
+final 类不能被继承，没有类能够继承 final 类的任何特性。
+
+**synchronized 修饰符:**
+
+synchronized 关键字声明的方法同一时间只能被一个线程访问。synchronized 修饰符可以应用于四个访问修饰符。
+
+**transient 修饰符:**
+
+序列化的对象包含被 transient 修饰的实例变量时，java 虚拟机(JVM)跳过该特定的变量。
+
+该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。
+
+**volatile 修饰符:**
+
+volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。
+
+一个 volatile 对象引用可能是 null。
+
+
+
+##### 
+
+
 
 
 

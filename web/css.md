@@ -64,6 +64,8 @@
     <kbd>键盘输入</kbd><br>
     <var>变量</var>
 
+- mark标签：突出文本
+
 - 特出字符的字符实体
 
   - http://www.utf8-chartable.de/
@@ -102,7 +104,7 @@
     - 如h1 + p，与h1的第一个p段落匹配。
     - h1 ~ p ，与h1 标签里的所有段落都匹配。
 
--  [伪类](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes)
+- [伪类](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes)
 
   - first-letter，指定元素的首字母样式
 
@@ -194,5 +196,89 @@
   ```
 
 
-- ​
 
+
+
+
+##### 第九章：在网页中使用图像
+
+- 在线图片编辑网站
+
+  - http://pixlr.com
+  - www.picmonkey.com
+
+- software
+
+  - PS 
+  - IrfanView
+
+- 设置图像对齐方式，属性vertical-align
+
+  - baseline: 图像下边缘与文本基线对齐
+  - middle
+  - bottom
+  - text-bottom
+  - top： 图像下边缘与文本上边缘对齐
+  - text-top ：上边缘与文本上边缘对齐
+  - sub
+  - sup 上标形式
+  - length： 指定特定的距离
+  - %，已line-height为基准调整
+
+- 图片作为背景
+
+  - 在元素中写:background-image: url(“image_address”)
+  - background-repeat : repeat , repeat-x ,repeat-y, no-repeat.
+  - background-position :两个百分比数值，或者（left，center，right）（left ,center ,right ）只写一个，另一个默认center。
+  - background-attachment :scroll (default ),fixed ,local .
+
+- list-style-image ,将图像作为列表符号。一般还设置list-style-type，找不到图像时使用[项目符号样式](http://www.runoob.com/cssref/pr-list-style-type.html)
+
+- map创建图像映射（图像不同的部分，不一样的链接）
+
+  - ```javascript
+    <img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+    <map name="planetmap">//name是map必需的属性
+      <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+      <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+      <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+    </map>
+    ```
+
+  - shape：
+
+    ``` javascript
+    <area shape="default|rect|circle|poly">
+    ```
+
+
+
+- - coords坐标
+
+    - shape为rect,*x1,y1,x2,y2*，该值规定矩形左上角和右下角的坐标
+    - 如果 shape 属性设置为 "circ"，则该值规定圆心的坐标和半径。
+    - x1,y1,x2,y2,..,xn,yn，如果 shape 属性设置为 "poly"，则该值规定多边形各顶点的值。如果第一个坐标和最后一个坐标不一致，那么为了关闭多边形，浏览器必须添加最后一对坐标。
+
+  - ``` javascript
+    <style>
+    ul 
+    {
+    	list-style-image:url('sqpurple.gif');
+    }
+    ul.a {list-style-type:circle;}
+    ul.b {list-style-type:square;}
+    ol.c {list-style-type:upper-roman;}
+    ol.d {list-style-type:lower-alpha;}
+    </style>
+    ```
+
+  -   确定区域软件
+
+    - Mapedit
+
+    - www.image-maps.com      
+
+      ​
+
+      ​
