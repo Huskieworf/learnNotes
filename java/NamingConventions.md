@@ -1,3 +1,124 @@
+##### 一些注释模板
+
+**file：**
+
+``` java
+/**  
+ * @Title:  ${file_name}   
+ * @Package ${package_name}   
+ * @Description:    ${todo}(用一句话描述该文件做什么)   
+ * @author: Huskie worf     
+ * @date:   ${date} ${time}   
+ * @version V1.0 
+ * @Copyright: ${year} Huskie Worf Inc. All rights reserved. 
+ * 注意：本内容仅限于学习交流，禁止用于其他的商业目的
+ */
+```
+
+**class:**
+
+``` java
+/**   
+ * @ClassName:  ${type_name}   
+ * @Description:${todo}(这里用一句话描述这个类的作用)  
+ * @author: Huskie worf 
+ * @date:   ${date} ${time}   
+ * @Copyright: ${year} Huskie Worf Inc. All rights reserved. 
+ */
+```
+
+
+
+**二、注释规范**
+
+**1、   类注释**
+
+在每个类前面必须加上类注释，注释模板如下：
+
+```java
+/**
+
+* Copyright (C), 2006-2010, ChengDu Lovo info. Co., Ltd.
+
+* FileName: Test.java
+
+* 类的详细说明
+
+*
+
+* @author 类创建者姓名
+
+    * @Date    创建日期
+
+* @version 1.00
+
+*/
+```
+
+
+
+ 
+
+**2、   属性注释**
+
+在每个属性前面必须加上属性注释，注释模板如下：
+
+```java
+/** 提示信息 */
+
+private String strMsg = null;
+
+ 
+
+```
+
+
+
+**3、   方法注释**
+
+在每个方法前面必须加上方法注释，注释模板如下：
+
+```java
+/**
+*类方法的详细使用说明
+*
+* @param 参数1 参数1的使用说明
+* @return 返回结果的说明
+* @throws 异常类型.错误代码 注明从此类方法中抛出异常的说明
+*/
+```
+
+
+
+**4、   构造方法注释**
+
+``` java
+在每个构造方法前面必须加上注释，注释模板如下：
+
+/**
+* 构造方法的详细使用说明
+*
+* @param 参数1 参数1的使用说明
+*
+* @throws 异常类型.错误代码 注明从此类方法中抛出异常的说明
+*
+*/
+```
+
+ 
+
+**5、   方法内部注释**
+
+在方法内部使用单行或者多行注释，该注释根据实际情况添加。
+
+如：//背景颜色
+
+       Color bgColor = Color.RED
+
+
+
+
+
 Java命名规范
 
 **一、命名规范**
@@ -31,100 +152,3 @@ Java命名规范
 4)、坚决不允许出现中文及拼音命名。
 
  
-
-**二、注释规范**
-
-**1、   类注释**
-
-在每个类前面必须加上类注释，注释模板如下：
-
-```java
-/**
-
-* Copyright (C), 2006-2010, ChengDu Lovo info. Co., Ltd.
-
-* FileName: Test.java
-
-* 类的详细说明
-
-*
-
-* @author 类创建者姓名
-
-    * @Date    创建日期
-
-* @version 1.00
-
-*/
-
-```
-
-
-
- 
-
-**2、   属性注释**
-
-在每个属性前面必须加上属性注释，注释模板如下：
-
-```java
-/** 提示信息 */
-
-private String strMsg = null;
-
- 
-
-```
-
-
-
-**3、   方法注释**
-
-在每个方法前面必须加上方法注释，注释模板如下：
-
-```java
-/**
-
-*类方法的详细使用说明
-
-*
-
-* @param 参数1 参数1的使用说明
-
-* @return 返回结果的说明
-
-* @throws 异常类型.错误代码 注明从此类方法中抛出异常的说明
-
-*/
-
-```
-
-
-
-**4、   构造方法注释**
-
-``` java
-在每个构造方法前面必须加上注释，注释模板如下：
-
-/**
-
-* 构造方法的详细使用说明
-
-*
-
-* @param 参数1 参数1的使用说明
-
-* @throws 异常类型.错误代码 注明从此类方法中抛出异常的说明
-
-*/
-```
-
- 
-
-**5、   方法内部注释**
-
-在方法内部使用单行或者多行注释，该注释根据实际情况添加。
-
-如：//背景颜色
-
-       Color bgColor = Color.RED
