@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retro Snaker</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+<div class="panel">
+    <h1 style="color: bisque">Snaker </h1>
+    <!-- 记录吃了多少个蛋 -->
+    <div id="displayScore">
+        <p > score:<span id="score" >0</span></p>
+    </div>
+   <div id="displayLevel">
+       <p > level:<span id="level" >1</span></p>
+   </div>
+    <!-- 暂停按钮 -->
+    <input id="Pause" type="button" name="name" value="Pause">
+    <!-- 开始按钮 -->
+    <input id="Start" type="button" name="name" value="Start">
+    <!-- 刷新(重新开始游戏) -->
+    <input id="Refresh" type="button" name="name" value="Refresh">
+    <!-- 加速按钮 -->
+    <input id="Accelerate" type="button" name="name" value="加速">
+    <!-- 贪吃蛇的行走路径地图 -->
+    <div id="snake_map"></div>
+    <div id="xiaoxun">
+        <img src="image/校训.jpg">
+    </div>
+</div>
+</body>
+<script src="snake.js"></script>
+</html>

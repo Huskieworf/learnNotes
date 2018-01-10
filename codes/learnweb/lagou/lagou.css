@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 1400px;
+    margin: auto;
+}
+
+/*header部分*/
+#header {
+    width: 1600px;
+    height: 30px;
+    overflow: hidden;
+    background-color: black;
+    margin-left: -100px;
+}
+
+#header p {
+    line-height: 30px;
+    float: left;
+    margin-right: 50px;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+#header p:hover {
+    color: white;
+    cursor: pointer;
+}
+
+#headerHidden p {
+    margin-right: 0;
+    padding-left: 6px;
+}
+
+#headerHidden {
+    width: 70px;
+    display: none;
+    margin-left: 1400px;
+    height: 180px;
+    background-color: black;
+}
+
+/*logo部分*/
+#logo {
+    width: 1600px;
+    height: 50px;
+    margin-left: -100px;
+}
+
+#logo p:hover {
+    cursor: pointer;
+}
+
+#logo img {
+    height: 50px;
+    width: 110px;
+    margin-left: 180px;
+    float: left;
+}
+
+#logo img:hover {
+    cursor: pointer;
+}
+
+.logoList {
+    float: left;
+    margin-left: 50px;
+    padding-top: 20px;
+    height: 50px;
+
+}
+
+.logoList:hover {
+    border-bottom: 2px solid green;
+}
+
+.logoList h2 {
+    font-weight: normal;
+    font-size: 20px;
+
+}
+
+.logoList h2:hover {
+    cursor: pointer;
+}
+
+/* 搜索框部分*/
+
+#search {
+    height: 130px;
+    width: 1600px;
+    position: relative;
+    /*background-color: red;*/
+    border: 1px solid #f2f5f4;
+    margin-left: -30px;
+}
+
+#search input {
+    height: 45px;
+    position: absolute;
+    font: 400 16px Arial;
+}
+
+#searchBox {
+    margin-left: -600px;
+    margin-top: 30px;
+    width: 800px;
+    border: 1px solid #f2f5f4;
+
+}
+
+#searchBox:hover {
+    border: 1px solid #00a57f;
+}
+
+#searchButton {
+    left: 1038px;
+    top: 30px;
+    background-color: #00a57f;
+    color: white;
+    width: 130px;
+    height: 47px;
+}
+
+#searchDefault {
+    position: absolute;
+    top: 80px;
+    left: 300px;
+}
+
+#remen {
+    font-size: 14px;
+    position: absolute;
+    margin-top: 0;
+    margin-left: -60px;
+}
+
+#search a {
+    color: #00a57f;
+    font-size: 14px;
+    float: left;
+    margin-left: 20px;
+}
+
+/*中间职业导航部分 */
+#sliderLeft {
+    margin-left: 150px;
+}
+
+#sliderLeft h6 {
+    display: inline;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+#sliderLeft a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+#sliderLeft a:hover {
+    text-decoration: underline;
+    color: #00a57f;
+
+}
+
+.sliderBox {
+    margin-top: 10px;
+    height: 30px;
+    width: 300px;
+    padding-top: 10px;
+
+}
+
+.sliderBox:hover {
+    border: 1px solid #f1f1f1;
+    border-right: none;
+}
+
+/* 广告部分 */
+#sliderRight {
+    width: 800px;
+    height: 300px;
+    overflow: hidden;
+    background-color: #00a57f;
+    margin-left: 500px;
+    margin-top: -320px;
+    position: relative;
+}
+
+#container {
+    width: 1600px;
+    height: 300px;
+}
+
+#right {
+    position: absolute;
+    top: 130px;
+    left: 750px;
+}
+
+#right:hover {
+    cursor: pointer;
+}
+
+#container img {
+    float: left;
+}
+
+#jobIndex {
+    margin-top: 50px;
+    margin-left: 150px;
+}
+
+#jobIndex div {
+    display: inline-block;
+    margin-right: 50px;
+    padding: 20px;
+}
+
+#jobIndex div:hover {
+    cursor: pointer;
+    border-bottom: 2px solid black;
+}
+
+/*热门职业*/
+#hot {
+    display: block;
+    /*display: none;*/
+    /*width: 1230px;*/
+    height: 660px;
+    /*background-color: #00a57f;*/
+    margin-left: 150px;
+    border-top: 1px solid #e8e8e8;
+}
+
+#hot div {
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    height: 200px;
+    width: 389px;
+}
+
+/*最新职位*/
+#newWork {
+    display: none;
+    width: 1230px;
+    height: 660px;
+    /*background-color: red;*/
+    margin-left: 150px;
+    border-top: 1px solid #e8e8e8;
+}
+
+#newWork div {
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    height: 200px;
+    width: 389px;
+}
+
+.more {
+    width: 389px;
+    heigt: 44px;
+    margin: 20px 560px;
+}
+
+.more:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+.more p {
+    color: green;
+    padding: 10px 20px;
+    font-size: large;
+    text-align: center;
+}
+
+.more p:hover {
+    color: white;
+}
+
+/*热门公司*/
+#companyIndex {
+    margin-top: 50px;
+    margin-left: 150px;
+    width: 70px;
+    padding: 20px;
+}
+
+#companyIndex:hover {
+    border-bottom: 2px solid black;
+}
+
+#company {
+    width: 1300px;
+    height: 600px;
+    /*background-color: red;*/
+    margin-left: 150px;
+    border-top: 1px solid #e8e8e8;
+}
+
+#company div {
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    height: 270px;
+    width: 288px;
+    border: 1px solid #e8e8e8;
+}
+
+#bottom {
+    margin-top: 50px;
+    margin-left: 150px;
+    width: 70px;
+    padding: 20px;
+}
+
+#bottom:hover {
+    border-bottom: 2px solid black;
+}
+
+#links {
+    margin-left: 170px;
+    margin-top: 20px;
+    padding-top: 20px;
+    height: 60px;
+    border-top: 2px solid #e8e8e8;
+}
+
+#links a {
+    margin-right: 20px;
+    font-size: 14px;
+    padding-top: 20px;
+
+}
+
+#links a:hover {
+    color: green;
+
+}
+
+/*登陆注册*/
+
+#sign1 {
+    width: 99px;
+    height: 60px;
+    margin-left: 170px;
+
+}
+
+#sign1 img {
+    margin-top: 54px;
+}
+
+#sign {
+    width: 1583px;
+    height: 60px;
+    background-color: #12bb84;
+    margin-top: 20px;
+}
+
+
+#sign2 {
+    width: 250px;
+    height: 60px;
+    margin-left: 350px;
+    padding-top: 20px;
+}
+#sign h3{
+    /*color: white;*/
+}
+#sign3 {
+    width: 150px;
+    height: 60px;
+    margin-left: 750px;
+    margin-top:-80px;
+    padding-top: 20px;
+}
+
+#sign4 {
+    width: 150px;
+    height: 60px;
+    margin-left: 900px;
+    margin-top:-80px;
+    padding-top: 20px;
+}
+
+#sign5 button{
+    width: 99px;
+    height: 60px;
+    margin-left: 1100px;
+}
+
+#sign6 button{
+    width: 99px;
+    height: 60px;
+    margin-left: 1200px;
+    margin-top:-80px;
+}

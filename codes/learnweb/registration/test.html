@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p id="demo">单击按钮显示字符串的第一个字符。</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction() {
+        var str = "Leery1234@163.com";
+        var emilbox = [["123.com"], ["163.com"], ["sina.com"], ["sohu.com"], ["gmail.com"], ["qq.com"], ["yahoo.com"], ["sougou.com"], ["21cn.com"]];
+        if (charNum(str, '@', 1)) {
+            var split = str.split('@', 2);
+            var prew = split[0];
+            var forword = split[1];
+            if (noOtherChar(prew, '_')) {
+                for (var i = 0; i < emilbox.length; i++) {
+                    if (forword == emilbox[i]) {
+                        document.getElementById("demo").innerHTML = str.charAt(0);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Created by Administrator on 2017/12/21.
+     */
+
+
+
+
+    function checkEmail(emailstrs) {
+        var emilbox = [["123.com"], ["163.com"], ["sina.com"], ["sohu.com"], ["gmail.com"], ["qq.com"], ["yahoo.com"], ["sougou.com"], ["21cn.com"]];
+        var bool = false;
+        if (emailstrs) {
+            if (noOtherChar(emailstrs, "_@.")) {
+                if (charNum(emailstrs, '@', 1)) {
+                    var split = emailstrs.split('@', 2);
+                    var prew = split[0];
+                    var forword = split[1];
+                    if (noOtherChar(prew, '_')) {
+                        for (var i = 0; i < emilbox.length; i++) {
+                            if (forword == emilbox[i]) {
+                                bool = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return bool;
+    }
+
+
+    /* 长度是否在lenMin到lenMax之间，包含lenMin和lenMax*/
+    function checkLength(strs, lenMin, lenMax) {
+        var len = strs.length;
+        if (len >= lenMin && len <= lenMax) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /* 是否为空字符串
+     * 空返回false；非空返回true；
+     *
+     function isEmpty(strs) {
+     var len = strs.length;
+     if (len) {
+     return true;
+     }
+     else {
+     return false;
+     }
+     }
+
+     */
+    /*  字符串是否为数字 */
+    function isNum(strs, start, end) {
+        if (!start) {
+            start = 0;
+        }
+        if (!end) {
+            end = strs.length;
+        }
+        for (var i = start; i < end; i++) {
+            if (isNumc(strs.charAt(i))) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+    }
+
+    /* 是否为大写字母 */
+    function isUpper(char) {
+        if (char >= "A" && char <= 'Z') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /* 是否为小写字母 */
+    function isLower(char) {
+        if (char >= "a" && char <= 'z') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /* 是否为数字 */
+    function isNumc(char) {
+        if (char >= "0" && char <= '9') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**首字母是否大写
+     function isFirstUpper(strs) {
+if (isUpper(strs.charAt(0))) {
+return true;
+}
+else {
+return false;
+}
+}
+     */
+    function isFirstUpper(strs) {
+        return (isUpper(strs.charAt(0)));
+    }
+
+    /* 有数字吗 */
+    function hasNum(strs) {
+        for (var i = 0; i < strs.length; i++) {
+            if (isNumc(strs[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* 有大写字母吗 */
+    function hasUpper(strs) {
+        for (var i = 0; i < strs.length; i++) {
+            if (isUpper(strs[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* 有小写字母吗 */
+    function hasLower(strs) {
+        for (var i = 0; i < strs.length; i++) {
+            if (isLower(strs[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* 有指定特殊字符吗 */
+    function hasSpecialChar(strs, char) {
+        for (var i = 0; i < strs.length; i++) {
+            if (strs[i] == char) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* 有数字，字母之外的其他字符吗 */
+    function noOtherChar(strs, exceptions) {
+        var bool = false;
+
+        for (var i = 0; i < strs.length; i++) {
+            if (isLower(strs[i]) || isUpper(strs[i]) || isNumc(strs[i]) || search(exceptions, strs[i])) {
+                bool = true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        return bool;
+    }
+
+    /*在字符串中有指定字符*/
+    function search(strs, char) {
+        for (var i = 0; i < strs.length; i++) {
+            if (strs[i] == char)
+                return true;
+        }
+        return false;
+    }
+    /* 字符串中有指定字符的个数*/
+    function charNum(strs, char, charnum) {
+        var couNum = 0;
+        for (var i = 0; i < strs.length; i++) {
+            if (strs[i] == char) {
+                couNum = couNum + 1;
+            }
+        }
+        if (couNum == charnum) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>
+
+</body>
+</html>

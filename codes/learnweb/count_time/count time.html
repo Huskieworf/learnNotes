@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js获取当前时间显示在页面上</title>
+    <link rel="stylesheet" href="css.css">
+    <script>
+        window.onload = function () {
+//定时器每秒调用一次fnDate()
+            setInterval(function () {
+                fnDate();
+                leftTimer(2017, 12, 21, 12, 0, 0);
+            }, 1000);
+        }
+        //js 获取当前时间
+        function fnDate() {
+            //var str='当前时间';//定义变量
+            //var oText=document.getElementById('timerText');
+            //oText.value=str;//给文本框赋值并显示
+            var oDiv = document.getElementById("timer");
+            var date = new Date();
+            var year = date.getFullYear();//当前年份
+            var month = date.getMonth();//当前月份
+            var data = date.getDate();//天
+            var hours = date.getHours();//小时
+            var minute = date.getMinutes();//分
+            var second = date.getSeconds();//秒
+            var time = year + "-" + fnW((month + 1)) + "-" + fnW(data) + " " + fnW(hours) + ":" + fnW(minute) + ":" + fnW(second);
+            oDiv.innerHTML = time;
+
+        }
+
+        //获取倒计时
+        function leftTimer(year, month, day, hour, minute, second) {
+            var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
+            var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+            var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
+            var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟
+            var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数
+            days = checkTime(days);
+            hours = checkTime(hours);
+            minutes = checkTime(minutes);
+            seconds = checkTime(seconds);
+            //setInterval("leftTimer(2017,11,21,12,0,0)",1000);
+            document.getElementById("countTime").innerHTML = days + "天" + hours + "小时" + minutes + "分" + seconds + "秒";
+        }
+        function checkTime(i) { //将0-9的数字前面加上0，例1变为01
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+        //补位 当某个字段不是两位数时补0
+        function fnW(str) {
+            var num;
+            str > 10 ? num = str : num = "0" + str;
+            return num;
+        }
+    </script>
+</head>
+<body>
+    <div id="timerText" >
+        <p>当前时间</p>
+    </div>
+    <div id="timer"></div>
+    <div id="countTimeText" >
+        <p>距离明日中午12:00:00倒计时</p>
+    </div>
+    <div id="countTime"></div>
+</body>
+</html>

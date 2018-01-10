@@ -1,0 +1,68 @@
+/* 内外边距的设置*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 显示一张图片样式  */
+#showone {
+    width: 600px;
+    height: 400px;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid gray;
+}
+
+
+
+/*  滚动盒子要装下5张图片 */
+#slider {
+    width: 3000px;
+    height: 400px;
+    border: 1px solid powderblue;
+}
+
+
+/* 每张图片大小 */
+.oneImage{
+    width: 600px;
+    height: 400px;
+    float: left;
+}
+
+#lunbo{
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    left: 250px;
+    top: 350px;
+}
+
+#lunbo div{
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-left: 4px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+#bLeft {
+    position: absolute;
+    left: 0px;
+    top: 150px;
+    cursor: pointer;
+
+}
+
+#bRight {
+    position: absolute;
+    left: 520px;
+    top: 150px;
+    cursor: pointer;
+
+
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>毕设首页</title>
+    <!-- 调用外部CSS-->
+    <link rel="stylesheet" href="carousel.css">
+</head>
+<body>
+<!--  控制盒子 -->
+<div id="panel">
+    <div id="showone">
+        <!--滚动的slider盒子,包含5张图片 -->
+        <div id="slider">
+            <div class="oneImage">
+                <img src="images/beijing.jpg" alt=""/>
+            </div>
+            <div class="oneImage">
+                <img src="images/shanghai.jpg" alt=""/>
+            </div>
+            <div class="oneImage">
+                <img src="images/chengdu.jpg" alt=""/>
+            </div>
+            <div class="oneImage">
+                <img src="images/yunnan.jpg" alt=""/>
+            </div>
+            <div class="oneImage">
+                <img src="images/beijing.jpg" alt=""/>
+            </div>
+        </div>
+        <!-- 四个小圆点 -->
+        <div id="lunbo">
+            <div id="b1" onclick="dianChange(0)" ></div>
+            <div id="b2" onclick="dianChange(1)"></div>
+            <div id="b3" onclick="dianChange(2)"></div>
+            <div id="b4" onclick="dianChange(3)"></div>
+        </div>
+        <div id=LR>
+            <div id="bLeft" onclick="trunL()">
+                <img src="images/left.png">
+            </div>
+            <div id="bRight" onclick="trunR()">
+                <img src="images/right.png">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 调用外部js -->
+<script src="carousel.js"></script>
+</body>
+</html>

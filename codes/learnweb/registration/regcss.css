@@ -1,0 +1,60 @@
+/* CSS样式表 */
+
+/** {margin:0px; padding:0px;}什么意思？
+* {margin:0px; padding:0px;}
+* 表示所有的元素的对齐方式以及和父类之间的间距都为0
+* body{margin:0px;padding:0px;}
+* body里面的则表示的是网页的body该元素的间距和间距
+* '*'号是全部的都外边距和内边距都为0，而body只是主题的外边距和内边距都为0
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#Top {
+    width: 100%;
+    height: 200%;
+    font-size: large;
+    background-color: #e5f9ff;
+    color: rosybrown;
+    text-indent: 30px;
+}
+
+.Input {
+    /* 默认值。项目被拉伸以适应容器。
+    align-content:stretch; */
+    display: table;
+    color: black;
+    /* 行间距 */
+    line-height: 150%;
+    align-content: center;
+    width: 500px;
+    height: auto;
+    margin: 20px;
+
+}
+
+.InputLeft {
+    width: 100px;
+    height: auto;
+    /* 文本对齐方式 */
+    text-align: right;
+    /* 浮动方式 */
+    float: left;
+}
+
+.InputRight {
+    width: 380px;
+    float: right;
+    height: auto;
+    text-align: left;
+}
+
+.Submit {
+    width: 220px;
+    height: auto;
+    float: right;
+    margin: 20px;
+
+}

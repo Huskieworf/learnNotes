@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="regcss.css">
+</head>
+<body>
+<div id="Top">注册新会员</div>
+<!-- form的action没有实现  样式表中也没有写form-->
+<form action="#" style="margin-top: 10%; margin-left:15%"  >
+    <div class="Input">
+        <div class="InputLeft">
+            <span>用户名</span>
+        </div>
+        <div class="InputRight">
+            <input type="text" name="username" id="username"/>
+            <span>*</span>
+        </div>
+    </div>
+    <div class="Input">
+        <div class="InputLeft">
+            <span>密码</span>
+        </div>
+        <div class="InputRight">
+            <input type="text" name="password" id="password"/>
+            <span>*</span>
+        </div>
+    </div>
+    <div class="Input">
+        <div class="InputLeft">
+            <span>确认密码</span>
+        </div>
+        <div class="InputRight">
+            <input type="text" name="ConfirmPW" id="confirmPW"/>
+            <span>*</span>
+        </div>
+    </div>
+    <div class="Input">
+        <div class="InputLeft">
+            <span>性别</span>
+        </div>
+        <!-- 设置默认状态为男checked="checked"
+            设置单选按钮type=radio 没有引号！！！  -->
+        <div class="InputRight">
+            <input type=radio  name="sex" id="male" checked="checked"/>男
+            <input type=radio  name="sex" id="female"/>女
+        </div>
+    </div>
+    <div class="Input">
+        <div class="InputLeft">
+            <span>邮箱</span>
+        </div>
+        <div class="InputRight">
+            <input type="text" name="email" id="email"/>
+            <span>*</span>
+        </div>
+    </div>
+    <div class="Input">
+        <div class="InputLeft">
+            <span>身份证</span>
+        </div>
+        <div class="InputRight">
+            <input type="text" name="idCard" id="idCard"/>
+            <span>*</span>
+        </div>
+    </div>
+    <div class="Input">
+        <div class="InputLeft">
+            <span>手机号码</span>
+        </div>
+        <div class="InputRight">
+            <input type="text" name="phone" id="phone"/>
+            <span>*</span>
+        </div>
+    </div>
+    <div class="Input">
+        <div class="InputLeft">
+            <span>住址</span>
+        </div>
+        <div class="InputRight">
+            <select name="province" id="province">
+
+            </select>
+            <span>省/直辖市</span>
+            <select name="city" id="city">
+
+            </select>
+            <span>市</span>
+        </div>
+    </div>
+    <div class="Input">
+        <div class="InputLeft">
+        </div>
+        <div class="Submit">
+            <input type="submit" value="提交"/>
+        </div>
+    </div>
+</form>
+<!-- </body>前面调用外部js文件是最好的 -->
+<script src="regjs.js"></script>
+</body>
+</html>

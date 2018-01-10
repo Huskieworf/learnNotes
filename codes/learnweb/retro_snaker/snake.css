@@ -1,0 +1,114 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 20px;
+    color: red;
+
+}
+
+span {
+    color: black;
+}
+
+#displayScore{
+    position: absolute;
+    top: 10%;
+    left: 78%;
+}
+.panel {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+p {
+    position: absolute;
+    left: 65%;
+    top: 10%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#score {
+    text-align: center;
+    font-size: 20px;
+}
+
+#snake_map {
+    margin: 0 auto;
+    border: 1px inset skyblue;
+}
+
+/*行样式*/
+.row {
+    height: 20px;
+}
+
+/*列样式*/
+.col {
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
+
+    background: rgb(102, 255, 204);
+    float: left;
+}
+
+.activeSnake {
+    background: red ;
+}
+
+.snakeHead {
+    background: brown;
+    border-radius: 20px;
+}
+
+.egg {
+    background: red;
+    border-radius: 20px;
+}
+
+#Pause{
+    margin-left: 18%;
+    border: 1px inset skyblue;
+    color: white;
+    background: skyblue;
+    width: 50px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+#Start,
+#Accelerate {
+    border: 1px inset skyblue;
+    background: bisque;
+    color: white;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+#Refresh{
+    border: 1px inset skyblue;
+    background: skyblue;
+    color: white;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+#xiaoxun{
+    position: absolute;
+    top: 50px;
+    left: -150px;
+}
