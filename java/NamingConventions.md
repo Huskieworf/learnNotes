@@ -19,8 +19,7 @@
 
 ``` java
 /**   
- * @ClassName:  ${type_name}   
- * @Description:${todo}(这里用一句话描述这个类的作用)  
+ * @ClassName:  ${type_name}     
  * @author: Huskie worf 
  * @date:   ${date} ${time}   
  * @Copyright: ${year} Huskie Worf Inc. All rights reserved. 
@@ -33,31 +32,7 @@
 
 **1、   类注释**
 
-在每个类前面必须加上类注释，注释模板如下：
-
-```java
-/**
-
-* Copyright (C), 2006-2010, ChengDu Lovo info. Co., Ltd.
-
-* FileName: Test.java
-
-* 类的详细说明
-
-*
-
-* @author 类创建者姓名
-
-    * @Date    创建日期
-
-* @version 1.00
-
-*/
-```
-
-
-
- 
+在每个类前面必须加上类注释
 
 **2、   属性注释**
 
@@ -79,13 +54,12 @@ private String strMsg = null;
 在每个方法前面必须加上方法注释，注释模板如下：
 
 ```java
-/**
-*类方法的详细使用说明
-*
-* @param 参数1 参数1的使用说明
-* @return 返回结果的说明
-* @throws 异常类型.错误代码 注明从此类方法中抛出异常的说明
-*/
+/** 
+ * @Title: ${enclosing_method} 
+ * ${tags}
+ * @return ${return_type}  
+ * @throws 
+ */
 ```
 
 
@@ -97,10 +71,8 @@ private String strMsg = null;
 
 /**
 * 构造方法的详细使用说明
-*
 * @param 参数1 参数1的使用说明
-*
-* @throws 异常类型.错误代码 注明从此类方法中抛出异常的说明
+* @throws 
 *
 */
 ```
