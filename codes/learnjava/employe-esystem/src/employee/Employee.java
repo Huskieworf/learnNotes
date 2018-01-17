@@ -84,11 +84,11 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	@Override
+
 	/**
 	 * 显示员工各种信息
 	 */
-	public String toString() {
+	public String show() {
 		return "Employee [employeeID=" + employeeID + ", name=" + name + ", salary=" + salary + "]";
 	}
 }

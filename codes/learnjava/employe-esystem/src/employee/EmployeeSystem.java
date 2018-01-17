@@ -44,7 +44,7 @@ public class EmployeeSystem {
 	 */
 	public void showAllEmployee() {
 		for (Employee employee : employees) {
-			System.out.println(employee.toString());
+			System.out.println(employee.show());
 		}
 	}
 	/**
