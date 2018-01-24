@@ -178,7 +178,7 @@
     }
     ```
 
-  - dir控制文本的书写方向，取值有ltr,rtr。
+  - dir控制文本的书写方 向，取值有ltr,rtr。
 
 - 属性选择器
 
@@ -254,31 +254,78 @@
 
 
 
-- - coords坐标
+-   - coords坐标
 
     - shape为rect,*x1,y1,x2,y2*，该值规定矩形左上角和右下角的坐标
     - 如果 shape 属性设置为 "circ"，则该值规定圆心的坐标和半径。
     - x1,y1,x2,y2,..,xn,yn，如果 shape 属性设置为 "poly"，则该值规定多边形各顶点的值。如果第一个坐标和最后一个坐标不一致，那么为了关闭多边形，浏览器必须添加最后一对坐标。
 
-  - ``` javascript
-    <style>
-    ul 
-    {
-    	list-style-image:url('sqpurple.gif');
-    }
-    ul.a {list-style-type:circle;}
-    ul.b {list-style-type:square;}
-    ol.c {list-style-type:upper-roman;}
-    ol.d {list-style-type:lower-alpha;}
-    </style>
+-   ``` javascript
+          <style>
+          ul 
+          {
+          	list-style-image:url('sqpurple.gif');
+          }
+          ul.a {list-style-type:circle;}
+          ul.b {list-style-type:square;}
+          ol.c {list-style-type:upper-roman;}
+          ol.d {list-style-type:lower-alpha;}
+          </style>
     ```
 
-  -   确定区域软件
+    - 确定区域软件
 
-    - Mapedit
+      - Mapedit 
+      - www.image-maps.com      
 
-    - www.image-maps.com      
+##### 第十章 使用表格
 
-      ​
+```javascript
 
-      ​
+<table border="1" cellspacing="8">          //border设置表格边框大小,cellspacing单元格间距
+  <caption>表格标题</caption> //表格标题
+  <caption>
+  	<details>				//默认隐藏，用户点击展开
+  		<summary>表格摘要</summary>
+		<p>表格详细描述</p>
+  	</details>
+  </caption>
+  <tr>                      //tr行标签
+    <th>Month</th>          //th元素head标签
+    <th>Savings</th>		//td元素标签
+  </tr>
+  <tr>
+    <td colspan="2">January</td>  //跨越多列
+    <td>$100</td>
+  </tr> 
+  <tr>
+    <td rowspan="2">February</td> //跨越多行
+    <td>$80</td>
+  </tr>
+  <tr>
+	 <td>$90</td> 
+  </tr>	 
+</table>
+
+将列编组，设置列的样式.
+
+  <table>
+  <colgroup span="2" style="background:red"></colgroup>
+  <colgroup span="4 " style="background:green">
+    <col span="1" style="width:50px;">
+    <col span="2" style="width:20px;">
+    <col span="1" style="width:30px;">    
+  </colgroup>
+  </table>
+
+<thead>标签
+
+<tbody>
+
+<tfoot>
+```
+
+##### 第十一章 使用CSS元素
+
+
+
