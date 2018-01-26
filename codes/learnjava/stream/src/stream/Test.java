@@ -5,18 +5,24 @@ import java.io.*;
 public class Test {
 
 	public static void main(String[] args) {
+		// 字节流测试
+		// 复制单个文件
 		String fileFrom = "C:\\Users\\Administrator\\Music\\music.rar";
 		String fileTo = "C:\\Users\\Administrator\\Desktop\\webclass\\reference";
 		copy(fileFrom, fileTo);
+
+		// 复制文件夹
 		String filesFrom = "C:\\Users\\Administrator\\Desktop\\webclass\\day7";
 		String filesTo = "C:\\\\Users\\\\Administrator\\\\Desktop\\\\webclass\\\\reference";
 		copyDir(filesFrom, filesTo);
+
+		// 删除指定文件夹
 		String fileDelete = "C:\\Users\\Administrator\\Desktop\\webclass\\daydayday";
 		deleteDir(fileDelete);
 	}
 
-	// 文件拷贝
 	/**
+	 * 文件拷贝
 	 * 
 	 * @Title: copy
 	 * @param from
@@ -67,8 +73,8 @@ public class Test {
 		}
 	}
 
-	// 文件夹拷贝
 	/**
+	 * 文件夹拷贝
 	 * 
 	 * @Title: copyDir
 	 * @param from
@@ -101,6 +107,12 @@ public class Test {
 		}
 	}
 
+	/**
+	 * 删除指定文件夹
+	 * 
+	 * @Title: deleteDir
+	 * @param fileName
+	 */
 	public static void deleteDir(String fileName) {
 		File deleteFile = new File(fileName);
 		if (deleteFile.isFile()) {
@@ -123,4 +135,66 @@ public class Test {
 		}
 	}
 
+	/**
+	 * 字符流读取文本文件
+	 * 
+	 * @Title: ReaderChar
+	 * @param filePathAndName
+	 */
+	public static String ReaderChar(String filePathAndName) {
+		File file = new File(filePathAndName);
+		// 设置字符流read,Reader为抽象类，需要用子类实例化
+		Reader read = null;
+		StringBuilder sb = new StringBuilder();
+		try {
+			read = new FileReader(file);
+			// 设置每次读取长度,1k
+			char[] chars = new char[1024];
+			// 实际每次读取的长度
+			int len = 0;
+			// 读取
+			while ((len = read.read(chars)) != 0) {
+				sb.append(chars, 0, len);
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("找不到指定文件");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (read != null) {
+				try {
+					read.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return sb.toString();
+	}
+	
+	
+	/**
+	 * 写出文本文件
+	 * @param path
+	 * @param content
+	 */
+	public static void writeFile(String path,String content) {
+		//第二个参数是内容是否追加  true为追加  false为覆盖   没有第二个参数默认是覆盖
+		Writer writer = null;
+		try {
+			writer = new FileWriter(path, false);
+			writer.write(content);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			if(writer != null) {
+				try {
+					writer.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
 }
