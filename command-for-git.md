@@ -16,7 +16,6 @@
 拉取远程仓库：$ git pull remoteName
 
 推送远程仓库：$ git push remoteName
-
 ```
 
 
@@ -161,7 +160,7 @@ git add .
 git rm 文件名(包括路径) 从git中删除指定文件
 git clone git://github.com/schacon/grit.git 从服务器上将代码给拉下来
 git config --list 看所有用户
-git ls-files 看已经被提交的
+git **ls-files** （没有空格）看已经被提交的
 git rm [file name] 删除一个文件
 git commit -a 提交当前repos的所有的改变
 git add [file name] 添加一个文件到git index
@@ -205,6 +204,6 @@ git push -u origin master
 
 
 
- ![git](C:\Users\Administrator\Desktop\git.png)
+
 
 图片原网址：http://www.cnblogs.com/1-2-3/archive/2010/07/18/git-commands.html
