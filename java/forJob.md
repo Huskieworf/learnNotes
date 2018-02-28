@@ -1,4 +1,8 @@
-##### 1. 潜克隆和深克隆
+##### 1. 浅拷贝和深拷贝
+
+​	如果想要深拷贝一个对象， 这个对象必须要实现Cloneable接口，实现clone方法，并且在clone方法内部，把该对象引用的其他对象也要clone一份 ， 这就要求这个被引用的对象必须也要实现Cloneable接口并且实现clone方法。 
+
+​	浅拷贝是指在拷贝对象时，对于基本数据类型的变量会重新复制一份，而对于引用类型的变量只是对引用进行拷贝，没有对引用指向的对象进行拷贝。而深拷贝是指在拷贝对象时，同时会对引用指向的对象进行拷贝。区别就在于是否对 对象中的引用变量所指向的对象进行拷贝。
 
 ##### 2.==和equals的区别
 
@@ -87,12 +91,12 @@
 - 线程同步的方法
 - 线程池原理，使用，调优
 - ThreadLocal 作用和实现机制
--  Lock与synchronized 的区别,锁的粒度：类级别和对象级别
+- Lock与synchronized 的区别,锁的粒度：类级别和对象级别
 - 读写锁,CountDownLatch等的使用
 - ConcurrentHashMap get是否需要加锁，是如何保证高并发情况下的性能的？(分段锁，hashEntry的final字段结构，segment中volidate类型的count字段的设计)
 - 分布式锁的实现方式（redis,zk）
 - 代码实现一个读取缓存，缓存失效透传后端的功能。考擦点：如何避免高并发同一key多个同时透传后端，缓存击穿的问题 putifabsent等CAS操作是否会用
--  java 之DelayQueue，synchronizedQueue原理
+- java 之DelayQueue，synchronizedQueue原理
 - 普通Java中的ReentrantLock ，countdownLatch实现原理（如何保证高性能），和synchronized 之间的区别。什么时候选择去用它 
 - volitale的作用，为什么要指令重排序
 - AQS的理解，如何运用
