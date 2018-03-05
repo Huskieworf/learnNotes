@@ -414,6 +414,26 @@ HTTPS 和HTTP 协议相比提供了：
 
 [解决方法]：拆，将总是一起变化的东西放在一块儿。
 
+**6.Shotgun Surgery(弹式修改)**
+
+[解决方法]：拆，将总是一起变化的东西放在一块儿。
+
+7.**[Feature Envy](http://sourcemaking.com/refactoring/feature-envy) -----------（红杏出墙的函数）**使用了大量其他类的成员 
+
+[解决方法]：将这个函数挪到那个类里面。
+
+**8.[Data Clumps](http://sourcemaking.com/refactoring/data-clumps) ------------（数据团）常一起出现的一坨数据。**
+
+[解决方法]：把数据团封装成一个类
+
+**9.Switch Statements(switch惊悚现身)**
+
+面向对象程序的一个最明显特征就是：少用switch(或case)语句。从本质上说，switch语句的问题在于重复。你常会发现同样的switch语句散布于不同的地点。如果要为它添加一个新的case子句，你必须找到所有switch语句并修改它们。
+
+**10.[Comments](http://sourcemaking.com/refactoring/comments) ---------------（太多注释）这里指代码太难懂了，不得不用注释解释。**
+
+【解决方法】： 避免用注释解释代码，而是说明代码的目的，背景等。好代码会说话
+
 ##### 21.git的简单使用
 
 	> git add
@@ -426,11 +446,50 @@ HTTPS 和HTTP 协议相比提供了：
 
 ##### 22.静态代理和动态代理
 
+  	代理模式是常用的Java设计模式，它的特征是代理类与委托类有同样的接口，代理类主要负责为委托类预处理消息、过滤消息、把消息转发给委托类，以及事后处理消息等。代理类与委托类之间通常会存在关联关系，一个代理类的对象与一个委托类的对象关联，代理类的对象本身并不真正实现服务，而是通过调用委托类的对象的相关方法，来提供特定的服务。按照代理类的创建时期，代理类可分为两种。
+
+​	静态代理类：由程序员创建或由特定工具自动生成源代码，再对其编译。在程序运行前，代理类的.class文件就已经存在了。
+​	动态代理类：在程序运行时，运用反射机制动态创建而成。
+
+​	静态代理通常只代理一个类，动态代理是代理一个接口下的多个实现类。
+ 	静态代理事先知道要代理的是什么，而动态代理不知道要代理什么东西，只有在运行时才知道。
+
 ##### 23.java9的新特性
+
+ 	1. Java 平台级模块系统
+ 	2. Linking
+ 	3. JShell : 交互式 Java REPL
+ 	4. 改进的 Javadoc
+ 	5. 集合工厂方法
+ 	6. 改进的 Stream API
+ 	7. 私有接口方法
+ 	8. HTTP/2
+ 	9. 多版本兼容 JAR
 
 ##### 24.maven中如何规避，解决依赖冲突
 
+  1).短路优先原则
+
+        A->B->logback-1.0.jar
+        A->logback-1.1.jar
+
+2).先声明先优先原则(先解析先引用)
+   与项目A pom中配置 引用坐标的顺序有关,如果依赖B在C前的话 就优先B，反之...
+
+       A->B->logback-1.0.jar
+       A->C->logback-1.1.jar
+
 ##### 25.为什么Boolean.valueOf（success）比return true好？
+
+1.Boolean是boolean的封装类，扩展了很多方法。
+
+2.true存储空间为一个字节。需要产生Boolean类型实例，开辟新的内存空间，然后取boolean value。
+
+3.Boolean.valueOf(true)返回一个Boolean实例指定的布尔值。如果指定的布尔值是true就返回Boolean.TRUE；如果指定的布尔值是false就返回Boolean.FALSE。
+
+4.valueOf()是基本数据类型boolean对应封装类Boolean的一个静态方法，返回一个Boolean对象（Boolean.TRUE或者Boolean.FALSE）。
+
+5.二者的区别在于Boolean.valueOf(true)不需要开辟内存空间，从程序开发和内存角度出发，Boolean.valueOf(true)可能提高空间和时间性能，建议使用此方法。
 
 ### 算法
 
