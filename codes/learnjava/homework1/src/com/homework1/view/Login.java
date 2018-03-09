@@ -21,7 +21,7 @@ public class Login extends javax.servlet.http.HttpServlet {
         //如果客户端没有发送Cookie信息，那么cookies=null
         if(cookies!=null){
             for (Cookie cookie:cookies) {
-                if(cookie.getName().equals("username")){
+                if(cookie.getName().equals("cur_user")){
                     username=cookie.getValue();
                 }
             }
@@ -29,7 +29,7 @@ public class Login extends javax.servlet.http.HttpServlet {
         out.println("<form action='/homework1/loginDone' method='post'>");
         out.println("<span>账号</span><input type='text' name='username' value='"+username+"'><br/>");
         out.println("<span>密码</span><input type='password' name='password'><br/>");
-        out.println("<span>记住密码<span><input type='radio' name='savePW' checked='checked' value='save'><br/>");
+        out.println("<span>记住密码<span><input type='checkbox' name='savePW' checked='checked' value='save'><br/>");
         out.println("<input type='submit' value='登录'/><br/>");
         out.println("</form>");
     }
